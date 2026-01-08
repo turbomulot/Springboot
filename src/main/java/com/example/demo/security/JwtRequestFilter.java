@@ -36,7 +36,8 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             jwt = authorizationHeader.substring(7);
             try {
                 username = jwtUtil.extractUsername(jwt);
-            } catch (Exception e) {e
+            } catch (Exception e) {
+                // Vide
             }
         }
 
