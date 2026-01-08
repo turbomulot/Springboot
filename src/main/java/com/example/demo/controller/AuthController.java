@@ -29,7 +29,6 @@ public class AuthController {
     @PostMapping("/register")
     public String register(@RequestBody AppUser user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        // On force le rôle par défaut si non fourni
         if (user.getRole() == null || user.getRole().isEmpty()) {
             user.setRole("ROLE_USER");
         }
